@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>FitApp</title>
+</head>
+<body>
+<div>
+    <a href="../">home</a>
+    <a href="/user">user list</a>
+</div>
+<br>
+<fieldset style="width: 150px;">
+    <legend>enter new progress</legend>
+    <form action="">
+        <label for="weight">nick:</label><br>
+        <input type="text" id="weight" name="weight"><br>
+        <input type="submit" value="Submit">
+    </form>
+</fieldset>
+<br>
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>nick</th>
+        <th>age</th>
+        <th>height</th>
+        <th>weight</th>
+        <th>activity level</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="pers : ${persons}">
+        <td th:text="${pers?.id}"></td>
+        <td th:text="${pers?.nick}"></td>
+        <td th:text="${pers?.age}"></td>
+        <td th:text="${pers?.height}"></td>
+        <td th:text="${pers?.weight}"></td>
+        <td th:text="${pers?.activityLevel}"></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</body>
+</html>

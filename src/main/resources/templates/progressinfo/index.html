@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <title>Progress</title>
+</head>
+<body>
+
+<h2>Progress table</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th colspan="4">general info</th>
+        <th colspan="3">body % level</th>
+        <th colspan="10">circuits body parts [cm]</th>
+        <th rowspan="1">mood level [1-5]</th>
+    </tr>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>date</th>
+        <th>weight</th>
+
+        <th>fat</th>
+        <th>muscle</th>
+        <th>water</th>
+
+        <th>neck</th>
+        <th>left biceps</th>
+        <th>right biceps</th>
+        <th>chest</th>
+        <th>waist</th>
+        <th>hips</th>
+        <th>left thigh</th>
+        <th>right thigh</th>
+        <th>left calf</th>
+        <th>right calf</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="progress : ${entries}">
+        <td th:text="${progress?.id}"></td>
+        <td th:text="${progress?.person.name}"></td>
+        <td th:text="${progress?.currentDateTime}"></td>
+        <td th:text="${progress?.bodyWeight}"></td>
+        <td th:text="${progress?.bodyFatLevel}"></td>
+        <td th:text="${progress?.bodyMusceLevel}"></td>
+        <td th:text="${progress?.bodyWaterLevel}"></td>
+        <td th:text="${progress?.circumNeck}"></td>
+        <td th:text="${progress?.circumLeftBiceps}"></td>
+        <td th:text="${progress?.circumRightBiceps}"></td>
+        <td th:text="${progress?.circumChest}"></td>
+        <td th:text="${progress?.circumWaist}"></td>
+        <td th:text="${progress?.circumHips}"></td>
+        <td th:text="${progress?.circumLeftThigh}"></td>
+        <td th:text="${progress?.circumRightThigh}"></td>
+        <td th:text="${progress?.circumLeftCalf}"></td>
+        <td th:text="${progress?.circumRightCalf}"></td>
+        <td th:text="${progress?.moodlevel}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
